@@ -1,0 +1,269 @@
+:root {
+    --primary-color: #3e0045;
+    --secondary-color: #80487f;
+    --highlight-color: #50c5b7;
+    --hover-color: #c0a0b7;
+    --background-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    user-select: none;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--background-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0;
+    justify-content: center;
+}
+
+.wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+    background-color:rgb(231, 231, 223);
+    box-shadow: #000000;
+}
+
+.info-box {
+    display: none;
+    position: absolute;
+    top: 190px;
+    right: 100px;
+    width: 350px;
+    height: 50%;
+    background-color: white;
+    box-shadow: #000000;
+    padding: 2rem;
+    transition: right 0.5s ease-out;
+    max-width: 400px;
+}
+
+.info-box.active {
+    display: block;
+    font-size: large;
+    right: 0;
+    text-align: left;
+}
+
+.info-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 15px;
+    color: #ffffff;
+    padding: 2em;
+    background-color: #2f3235;
+}
+
+.footer > p:nth-child(1) {
+    margin-bottom: 1em;
+}
+
+.link {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ff5252;
+    font-size: 30px;
+    margin: 0.2em;
+}
+
+.title {
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 1em 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 30px;
+    transition: background-color 0.5s ease;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    font-size: 24px;
+    min-height: 70px;
+    padding: 0.8em 0;
+    background-color: var(--secondary-color);
+    transition: all 0.5s ease-in-out;
+}
+
+.navbar a {
+    all: unset;
+    cursor: pointer;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    background-color: var(--primary-color);
+}
+
+.navbar a:hover {
+    background-color: var(--hover-color);
+}
+
+.navbar select {
+    outline: none;
+    border: none;
+    font-size: 22px;
+    border-radius: 4px;
+    padding: 8px 12px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navbar select:hover {
+    background-color: var(--hover-color);
+}
+
+.center {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px, rgba(0, 0, 0, 0.1) 0px 4px 6px; /* Enhanced shadow for depth */
+    height: 600px;
+    width: 900px;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa); /* Subtle gradient for modern look */
+    border: 2px solid #e0e0e0; /* Thin border */
+    border-radius: 15px; /* Smooth rounded corners */
+    transition: transform 0.8s ease, box-shadow 0.3s ease; /* Smooth transitions for interaction */
+}
+
+.center:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 12px 20px, rgba(0, 0, 0, 0.15) 0px 8px 10px;
+}
+
+.array {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly; /* Even spacing between elements */
+    height: 100%;
+    padding: 1.5rem; /* Increased padding for breathing room */
+    background: linear-gradient(145deg, #e6e6e6, #f9f9f9); /* Light gradient background */
+    border-radius: 10px; /* Match the rounded corners of the container */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Inset shadow for depth */
+    transition: all 0.4s ease;
+}
+
+.cell {
+    display: flex;
+    align-items: flex-end; /* Align items to the bottom of the bar */
+    justify-content: center; /* Center the number horizontally */
+    flex: 0.5;
+    width: 0.000001%;
+    margin: 1px;
+    background-color: #b6b7ca;
+    position: relative;
+    transition: all 0.4s ease-in;
+}
+
+.cell.done {
+    background-color: #9cec5b;
+    border-color: #181817;
+    color: white;
+    transition: all 0.8s ease-out;
+}
+
+.cell.visited {
+    border-color: #6184d8;
+    background-color: #6184d8;
+    color: white;
+    transition: 0.5s;
+}
+
+.cell.current {
+    border-color: #50c5b7;
+    background-color: #50c5b7;
+    color: white;
+    transition: all 0.4s ease-out;
+}
+
+.cell.min {
+    background-color: #ff1493;
+    border-color: #ff1493;
+    color: white;
+    transition: all 0.4s ease-out;
+}
+
+.value-text {
+    position: absolute;
+    bottom: 5px; /* Adjust to fine-tune position */
+    font-size: 16px; /* Font size */
+    color: #ffffff; /* Text color */
+    font-weight: bold; /* Bold text */
+    text-align: center;
+    width: 100%;
+    transition: all 0.3s ease;
+
+    /* Add a 3D text effect */
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.7), /* Dark shadow for depth */
+        -2px -2px 2px rgba(255, 255, 255, 0.3); /* Highlight shadow for depth */
+
+    /* Background for text (standard colors) */
+    background: linear-gradient(90deg, #f39c12, #e74c3c);
+    border-radius: 5px;
+    padding: 2px 4px; /* Padding around the text */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Box shadow for a pop-out effect */
+    display: inline-block;
+}
+.value-text:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.8), 
+        -3px -3px 3px rgba(255, 255, 255, 0.5);
+    background: linear-gradient(90deg, #ff6f61, #ffcc33);
+}
+
+
+.sort-info {
+    display: none;
+    margin: 0 auto;
+    width: 400px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+    padding: 1rem;
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+    .navbar {
+        gap: 0.4em;
+    }
+    .title {
+        font-size: 1.2em;
+    }
+    .navbar * {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .center, .info {
+        width: 95%;
+    }
+    .sort-info {
+        width: 95%;
+    }
+}
